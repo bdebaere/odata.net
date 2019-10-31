@@ -291,8 +291,8 @@ namespace Microsoft.OData.Evaluation
 
             if (primitiveValue is Guid)
             {
-                type = EnsurePrimitiveType(type, EdmPrimitiveTypeKind.Guid);
-                return new EdmGuidConstant(type, (Guid)primitiveValue);
+                IEdmPrimitiveTypeReference guidType = EnsurePrimitiveType(type, EdmPrimitiveTypeKind.Guid);
+                return new EdmGuidConstant(guidType, (Guid)primitiveValue);
             }
 
             if (primitiveValue is TimeOfDay)
